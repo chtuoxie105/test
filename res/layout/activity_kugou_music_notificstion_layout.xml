@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/music_alarm_repeat_item_bg_enable" >
+
+        <ImageView
+            android:id="@+id/notification_image_tupian"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icon" />
+
+        <ImageView
+            android:id="@+id/notification_destroy_btn"
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:clickable="true"
+            android:src="@drawable/selector_notification_clean" />
+
+        <ImageView
+            android:id="@+id/notification_next_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/notification_destroy_btn"
+            android:clickable="true"
+            android:src="@drawable/selector_image_nextmusic_music" />
+
+        <ImageView
+            android:id="@+id/notification_music_start_suspend_btn"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/notification_next_btn"
+            android:clickable="true"
+            android:src="@drawable/minilyric_play_button_press" />
+
+        <ImageView
+            android:id="@+id/notification_music_up_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/notification_music_start_suspend_btn"
+            android:clickable="true"
+            android:src="@drawable/selector_image_up_music" />
+
+        <TextView
+            android:id="@+id/notification_music_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="3dp"
+            android:layout_toLeftOf="@id/notification_music_up_btn"
+            android:layout_toRightOf="@id/notification_image_tupian"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="多少次"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+</LinearLayout>

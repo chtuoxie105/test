@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/kg_share_lyric_bg" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/kugou_title3" >
+
+        <ImageView
+            android:id="@+id/new_kugou_title_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:src="@drawable/selector_kugou_back_lord_activity" />
+
+        <ImageView
+            android:id="@+id/new_kugou_list_music_imagebtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:clickable="true"
+            android:src="@drawable/selector_kugou_list_music_activity" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/new_kugou_list_music_imagebtn"
+            android:clickable="true"
+            android:src="@drawable/selector_image_like" />
+
+        <ImageView
+            android:id="@+id/new_kugou_title_down_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="38dp"
+            android:layout_toLeftOf="@id/new_kugou_list_music_imagebtn"
+            android:clickable="true"
+            android:src="@drawable/selector_image_download" />
+
+        <TextView
+            android:id="@+id/new_music_name_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/new_kugou_title_down_music"
+            android:layout_toRightOf="@id/new_kugou_title_back"
+            android:gravity="center"
+            android:text="酷狗"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/serch_music_lyric"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="点击搜索歌词"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_alignLeft="@id/serch_music_lyric"
+        android:layout_alignRight="@id/serch_music_lyric"
+        android:layout_below="@id/serch_music_lyric"
+        android:background="@android:color/white" />
+
+    <LinearLayout
+        
+        android:id="@+id/new_kuguo_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ktv_btn_blue_default"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="5dp" >
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:padding="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/selector_image_playerchoose_music" />
+
+        <ImageView
+            android:id="@+id/new_kuguo_up_music_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:padding="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/selector_image_main_up_music" />
+
+        <ImageView
+            android:id="@+id/new_kuguo_start_and_suspend_music_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:padding="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/kg_lock_screen_play_button_pressed" />
+
+        <ImageView
+            android:id="@+id/new_kuguo_next_music_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:padding="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/selector_image_main_nextmusic_music" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:padding="15dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/selector_image_development_list_music" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/new_kuguo_linearlayout"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="30dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <TextView
+            android:id="@+id/new_kuguo_current_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:text="00:00"
+            android:textColor="@android:color/white" />
+
+        <SeekBar
+            android:id="@+id/new_kuguo_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp" />
+
+        <TextView
+            android:id="@+id/new_kuguo_all_time_text"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:text="00:00"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/lanse" >
+
+        <ImageView
+            android:id="@+id/kugou_musicsqlite_list_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/m3" />
+
+        <TextView
+            android:id="@+id/kugou_musicsqlite_list_music_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:text="3MB" />
+
+   
+        <TextView
+            android:id="@+id/kugou_musicsqlite_list_singer_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="8dp"
+            android:layout_toLeftOf="@id/kugou_musicsqlite_list_music_size"
+            android:layout_toRightOf="@id/kugou_musicsqlite_list_image"
+            android:singleLine="true"
+            android:text="梁静茹 - 丝路.mp3"
+            android:textColor="@android:color/white" />
+        
+             <TextView
+            android:id="@+id/kugou_musicsqlite_list_music_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/kugou_musicsqlite_list_singer_name"
+            android:layout_below="@id/kugou_musicsqlite_list_singer_name"
+            android:layout_marginLeft="20dp"
+            android:text="03:45"
+            android:textColor="@android:color/white" />
+        
+    </RelativeLayout>
+
+</RelativeLayout>

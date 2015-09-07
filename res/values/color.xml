@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    	<color name="kugou_background">#3096FA</color>
+    	   <color name="lanse">#05C0AF</color>
+    	   <color name="heise">#303030</color>
+    	   <color name="huise">#979797</color>
+    	   <color name="ceshi">#666666</color>
+</resources>

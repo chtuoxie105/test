@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+	
+    <TextView 
+        android:id="@+id/popupwindow_allmusic_to_text"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/popupwindow_allmusic_text"
+        android:gravity="center"
+        android:text="总共24首歌曲"/>
+    <ListView
+        android:id="@+id/copykugou_listview_to_musicname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+   />
+
+</LinearLayout>

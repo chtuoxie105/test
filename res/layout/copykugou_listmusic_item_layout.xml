@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/selector_popupwindom_click"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal"
+    android:padding="3dp" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:padding="3dp" >
+
+        <ImageView
+            android:id="@+id/copykugou_listmusic_front_image"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:scaleType="fitXY"
+            android:focusable="false"
+            android:src="@drawable/listmusic_tubiao" />
+
+        <TextView
+            android:id="@+id/copykugou_listmusic_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/copykugou_listmusic_front_image"
+            android:gravity="center_vertical"
+            android:text="避风港" />
+
+        <TextView
+            android:id="@+id/copykugou_listmusic_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:gravity="center_vertical"
+            android:text="03:58" />
+    </RelativeLayout>
+
+</RelativeLayout>
