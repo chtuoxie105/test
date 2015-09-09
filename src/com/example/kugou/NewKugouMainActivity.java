@@ -11,11 +11,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.ServiceConnection;
+import android.database.Cursor;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.IBinder;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -95,11 +97,13 @@ public class NewKugouMainActivity extends Activity implements OnClickListener,
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_kugou_music);
-
-//		getFileWithMusic(allFile);// 遍历文件获取音乐文件
+		
+		musicSQLite();
+		
+		// getFileWithMusic(allFile);// 遍历文件获取音乐文件
 		startThreadFile(allFile);// 开启线程遍历文件获取音乐文件
 		example();// 实例化控件
-
+		
 		mStartAndSuspendMusicBtn
 				.setImageResource(R.drawable.kg_lock_screen_play_button_pressed);
 
@@ -186,6 +190,7 @@ public class NewKugouMainActivity extends Activity implements OnClickListener,
 		mPopupWindom.setTouchable(true);
 		mPopupWindom.setOutsideTouchable(true);
 		mPopupWindom.setBackgroundDrawable(new BitmapDrawable());
+		
 		mPopupWindom.getContentView().setOnTouchListener(new OnTouchListener() {
 			public boolean onTouch(View v, MotionEvent event) {
 				mPopupWindom.setFocusable(false);// 失去焦点
@@ -271,8 +276,8 @@ public class NewKugouMainActivity extends Activity implements OnClickListener,
 		sendBroadcast(activityBroadcastIntent);
 		Log.i("11", "发送成功");
 	}
-	
-	public void startThreadFile(final File fileAddress){
+
+	public void startThreadFile(final File fileAddress) {
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -280,7 +285,7 @@ public class NewKugouMainActivity extends Activity implements OnClickListener,
 			}
 		}).start();
 	}
-	
+
 	/**
 	 * 无限遍历一个文件夹，找出音乐文件，并添加到List里面，然后设置给适配器
 	 */
@@ -294,8 +299,7 @@ public class NewKugouMainActivity extends Activity implements OnClickListener,
 
 					} else {
 						String s = f.getName();
-						if (s.endsWith(".mp3") || s.endsWith(".m4a")
-								|| s.endsWith(".amr")) {
+						if (s.endsWith(".mp3") || s.endsWith(".amr")) {
 							fileName.add(f);// 添加的是地址
 							String namePostfix = divisionMusicName(s);// 返回的没有后缀名的音乐文件名
 
@@ -311,6 +315,23 @@ public class NewKugouMainActivity extends Activity implements OnClickListener,
 					}
 				}
 			}
+		}
+	}
+
+	public void musicSQLite() {
+		Cursor cursor = getContentResolver().query(
+				MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, null, null, null,
+				MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
+		while (cursor.moveToNext()) {
+			MusicWayBean bean = new MusicWayBean();
+
+			String musicPath = cursor.getString(cursor
+					.getColumnIndex(MediaStore.Audio.Media.DATA)); // 文件路径
+			String musicName = cursor.getString((cursor
+					.getColumnIndex(MediaStore.Audio.Media.TITLE)));// 音乐标题
+			String namePostfix = divisionMusicName(musicName);// 返回的没有后缀名的音乐文件名
+			Log.i("11","名字::"+musicName);
+			Log.i("11","路径::"+musicPath);
 		}
 	}
 
@@ -476,16 +497,17 @@ public class NewKugouMainActivity extends Activity implements OnClickListener,
 							}
 							if (mCurrentTimeText.getText().toString()
 									.equals(mAllTimeText.getText().toString())
-									&& !mAllTimeText.getText().toString().equals("")) {
+									&& !mAllTimeText.getText().toString()
+											.equals("")) {
 								Log.i("11", "自动播放");
 								nextMusic(checkMusicNumber);
 							}
-//
-//							if (allTimePoint == currentPoint
-//									&& allTimeSec == currentSec) {
-//							
-//								
-//							}
+							//
+							// if (allTimePoint == currentPoint
+							// && allTimeSec == currentSec) {
+							//
+							//
+							// }
 						}
 					});
 					try {

@@ -7,6 +7,12 @@
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="21" />
+    <!-- 单元测试 -->
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.example.kugou" >
+    </instrumentation>
 
     <application
         android:allowBackup="true"

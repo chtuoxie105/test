@@ -41,11 +41,6 @@ public class ListSqliteActivity extends Activity {
 		Cursor cursor = context.getContentResolver().query(
 				MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, null, null, null,
 				MediaStore.Audio.Media.DEFAULT_SORT_ORDER);
-
-		Log.i("11", "Cursor>>" + cursor);
-		Log.i("11", "" + cursor.getCount());
-
-		
 		while (cursor.moveToNext()) {
 			// int id = cursor.getInt(cursor
 			// .getColumnIndex(MediaStore.Audio.Media._ID)); // “Ù¿÷id
